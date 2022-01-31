@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="reset-style.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="main-desktop">
+      <div class="maps">
+        <a class="btn-icon btn-menu" onclick="openNav()">&#9776;</a>
+        <div class="menu-sidebar" id="menu-sidebar">
+          <nav>
+            <a class="btn-icon btn-close" onclick="closeNav()"> &times; </a>
+            <ul class="menu-wrapper">
+              <li>
+                <a href="./index.html" class="menu-item" id="index">
+                  <img
+                    style="width: 20px"
+                    src="images/icons/location-icon.png"
+                  />
+                  <p>BUY PROPERTIES</p>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="./dashboard.html" class="menu-item" id="dashboard">
+                  <img
+                    style="width: 20px"
+                    src="images/icons/dashboard-icon.png"
+                  />
+                  <p>DASHBOARD</p>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="sidebar-footer">
+            <img class="logo-sidebar" src="images/logo.png" />
+            <a href="#" class="sidebar-footer__friend">
+              <img style="width: 20px" src="images/icons/add-friend.png" />
+              <p>INVITE FRIEND</p>
+            </a>
+          </div>
+        </div>
+        <!-- <img src="images/google_map.png" style="width: 100%; height: 100vh" /> -->
+        <div id="map" style="width: 100%; height: 100%"></div>
+        <script>
+          function initMap() {
+            let options = {
+              center: { lat: 16.072163491469226, lng: 108.22690536081757 },
+              zoom: 15,
+              controls: true,
+            };
+            let map = new map4d.Map(document.getElementById("map"), options);
+          }
+        </script>
+        <script src="https://api.map4d.vn/sdk/map/js?version=2.0&key=822832497c256a0edb11a8652ed90963&callback=initMap"></script>
+      </div>
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <div class="logo">
+            <img src="images/logo.png" />
+          </div>
+          <div class="connect">
+            <p>DASHBOARD</p>
+            <button class="btn btn--secondary">CONNECT</button>
+          </div>
+          <div class="wallet">
+            <button class="btn btn-porfolio">Porfolio</button>
+            <div class="wallet__box">
+              <p>Wallet</p>
+              <div class="wallet__box--value">
+                0x472862d88400DBad6a65C5d710235FC
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="balance-wrapper-dashboard">
+          <div class="balance">
+            <div class="balance-title">$POLIS Balance</div>
+            <div class="balance-box">100,000 $POLIS</div>
+          </div>
+          <div class="available">
+            <div class="balance-title">Availabel slots</div>
+            <div class="balance-box">1499/2499</div>
+          </div>
+        </div>
+        <div class="properties-wrapper background-gray">
+          <div class="propertie">
+            <div class="propertie__logo-right">
+              <img src="images/corner-icon.png" />
+            </div>
+            <div>
+              <p class="text-sm text-white">#0001</p>
+              <div class="propertie__content">
+                <div class="propertie__content--left">
+                  <img src="./images/propertie-thumnail.png" />
+                </div>
+                <div class="propertie__content--right">
+                  <div class="propertie-header">
+                    <div class="propertie-header__name">
+                      <img src="images/propertie-icon.png" />
+                      <p>Bitexco Tower</p>
+                    </div>
+                    <div class="propertie-header__address">
+                      2 Hai Trieu, Ben Nghe, 1, HCMC
+                    </div>
+                  </div>
+                  <div>
+                    <div class="balance-box mb-sm bkg-gray"></div>
+                    <button class="btn btn--full btn-start-mining text-sm">
+                      START MINING
+                    </button>
+                  </div>
+                  <div class="sell">
+                    <div class="sell__item">
+                      <button>SELL ON MARKETPLACE</button>
+                    </div>
+                    <div class="sell__item"><button>SELL TO BANK</button></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cart-box hide">
+          <img
+            src="images/down-arrow.png"
+            onclick="toggleCartBox()"
+            class="arrow-cart-box"
+          />
+          <div class="cart-box-header">
+            <p class="text-white font-bold">My Cart</p>
+            <p class="text-white text-sm" style="position: absolute; right: 0">
+              Remove
+            </p>
+          </div>
+          <div class="cart-box-items">
+            <div class="cart-item">#0001</div>
+          </div>
+          <button class="btn-buy">BUY</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Screen-->
+    <div class="main-mobile">
+      <div class="header">
+        <div class="header__title">
+          <div class="header__title--menu">
+            <a class="btn-icon btn-menu" onclick="openNav()"> &#9776; </a>
+            <p>DASHBOARD</p>
+          </div>
+          <button class="btn btn--secondary">CONNECT</button>
+        </div>
+        <div class="wallet">
+          <button class="btn btn-porfolio">Porfolio</button>
+          <div class="wallet__box">
+            <p>Wallet</p>
+            <div class="wallet__box--value">
+              0x472862d88400DBad6a65C5d710235FC
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="balance-wrapper">
+        <div class="balance">
+          <div class="balance-title">$POLIS Balance</div>
+          <div class="balance-box">100,000 $POLIS</div>
+        </div>
+        <div class="available">
+          <div class="balance-title">Availabel slots</div>
+          <div class="balance-box">1499/2499</div>
+        </div>
+      </div>
+      <div class="properties-wrapper mobile-propertie dashboard-propertie">
+        <div class="propertie">
+          <div class="propertie__logo-right">
+            <img src="images/corner-icon.png" />
+          </div>
+          <div>
+            <p class="text-sm text-white">#0001</p>
+            <div class="propertie__content">
+              <div class="propertie__content--left">
+                <img src="./images/propertie-thumnail.png" />
+              </div>
+              <div class="propertie__content--right">
+                <div class="propertie-header">
+                  <div class="propertie-header__name">
+                    <img src="images/propertie-icon.png" />
+                    <p>Bitexco Tower</p>
+                  </div>
+                  <div class="propertie-header__address">
+                    2 Hai Trieu, Ben Nghe, 1, HCMC
+                  </div>
+                </div>
+                <div>
+                  <div class="balance-box mb-base bkg-gray"></div>
+                  <button class="btn btn--full btn-start-mining">
+                    START MINING
+                  </button>
+                </div>
+                <div class="sell">
+                  <div class="sell__item">
+                    <button>SELL ON MARKETPLACE</button>
+                  </div>
+                  <div class="sell__item"><button>SELL TO BANK</button></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-sidebar" id="menu-sidebar-mobile">
+        <nav>
+          <a class="btn-icon btn-close" onclick="closeNav()"> &times; </a>
+          <ul class="menu-wrapper">
+            <li>
+              <a href="./index.html" class="menu-item" id="index-mobile">
+                <img style="width: 20px" src="images/icons/location-icon.png" />
+                <p>BUY PROPERTIES</p>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a
+                href="./dashboard.html"
+                class="menu-item"
+                id="dashboard-mobile"
+              >
+                <img
+                  style="width: 20px"
+                  src="images/icons/dashboard-icon.png"
+                />
+                <p>DASHBOARD</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="sidebar-footer">
+          <img class="logo-sidebar" src="images/logo.png" />
+          <a href="#" class="sidebar-footer__friend">
+            <img style="width: 20px" src="images/icons/add-friend.png" />
+            <p>INVITE FRIEND</p>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>
