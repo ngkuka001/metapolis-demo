@@ -83,7 +83,7 @@ window.addEventListener("load", (event) => {
 // ];
 const propertieWrapper = document.getElementById("properties-wrapper");
 
-fetch("/propertiesData.json")
+fetch("https://ngkuka001.github.io/metapolis-demo/propertiesData.json")
   .then((response) => response.json())
   .then((properties) =>
     properties.map((propertie) => {
